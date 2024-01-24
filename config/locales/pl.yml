@@ -49,6 +49,7 @@ pl:
       default: "%d-%m-%Y"
       long: "%-d %B %Y"
       short: "%-d %b"
+      longer: "%A, %-d %B %Y"
     month_names:
       -
       - stycznia
