@@ -7,12 +7,15 @@
       ✅ Zabiorą:
       <%= trash.next_trash_day_types %>
     </h2>
+    <hr/>
     <h3>
       Kolejnym dniem wywozu śmieci będzie:
       <span>
         <%= I18n.l(trash.next_trash_day(1), format: :long) %>
       </span>. Zabiorą:
-      <%= trash.next_trash_day_types(1) %>
+      <span>
+        <%= trash.next_trash_day_types(1) %>
+      </span>.
     </h3>
   </div>
 </section>
