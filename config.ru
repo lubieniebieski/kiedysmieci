@@ -1,2 +1,2 @@
-require './main'
+require "./main"
 run Server
