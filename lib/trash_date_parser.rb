@@ -3,7 +3,7 @@ require "i18n"
 require_relative "schedule"
 
 class TrashDateParser
-  attr_reader :data
+  attr_reader :data, :last_updated_at
 
   def initialize(data)
     parse_data!(data)
@@ -30,6 +30,7 @@ class TrashDateParser
   def parse_data!(data)
     data = JSON.parse(data)
     @schedules_data = data["schedules"]
+    @last_updated_at = data["schedulePeriod"]["changeDate"]
   end
 
   def schedules
