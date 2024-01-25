@@ -1,85 +1,424 @@
 {
-    "2024": {
-        "1": {
-            "mixed": [
-                9,
-                23
-            ],
-            "plastic": [
-                9
-            ],
-            "paper": [
-                9
-            ],
-            "glass": [],
-            "bio": [
-                23
-            ],
-            "bulky": [],
-            "xmass_trees": [
-                10,
-                25
-            ]
-        },
-        "2": {
-            "mixed": [
-                6,
-                20
-            ],
-            "plastic": [
-                6
-            ],
-            "paper": [
-                6
-            ],
-            "glass": [
-                6
-            ],
-            "bio": [
-                20
-            ]
-        },
-        "3": {
-            "mixed": [
-                6,
-                20
-            ],
-            "plastic": [
-                5
-            ],
-            "paper": [
-                5
-            ],
-            "glass": [],
-            "bio": [
-                19
-            ]
-        },
-        "4": {
-            "mixed": [
-                6,
-                20
-            ],
-            "plastic": [
-                2,
-                30
-            ],
-            "paper": [
-                2,
-                30
-            ],
-            "glass": [
-                2,
-                30
-            ],
-            "bio": [
-                2,
-                16,
-                30
-            ],
-            "bulky": [
-                19
-            ]
-        }
+  "schedules": [
+    {
+      "id": "11968172",
+      "month": "1",
+      "days": "9;23",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968173",
+      "month": "2",
+      "days": "6;20",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968174",
+      "month": "3",
+      "days": "5;19",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968175",
+      "month": "4",
+      "days": "3;16;30",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968176",
+      "month": "5",
+      "days": "14;28",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968177",
+      "month": "6",
+      "days": "11;25",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968178",
+      "month": "7",
+      "days": "9;23",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968179",
+      "month": "8",
+      "days": "6;20",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968180",
+      "month": "9",
+      "days": "3;17",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968181",
+      "month": "10",
+      "days": "1;15;29",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968182",
+      "month": "11",
+      "days": "12;26",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968183",
+      "month": "12",
+      "days": "10;24",
+      "year": "2024",
+      "scheduleDescriptionId": "54653"
+    },
+    {
+      "id": "11968268",
+      "month": "1",
+      "days": "9",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968269",
+      "month": "2",
+      "days": "6",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968270",
+      "month": "3",
+      "days": "5",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968271",
+      "month": "4",
+      "days": "2;30",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968272",
+      "month": "5",
+      "days": "28",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968273",
+      "month": "6",
+      "days": "25",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968274",
+      "month": "7",
+      "days": "23",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968275",
+      "month": "8",
+      "days": "20",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968276",
+      "month": "9",
+      "days": "17",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968277",
+      "month": "10",
+      "days": "15",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968278",
+      "month": "11",
+      "days": "12",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968279",
+      "month": "12",
+      "days": "10",
+      "year": "2024",
+      "scheduleDescriptionId": "54661"
+    },
+    {
+      "id": "11968376",
+      "month": "1",
+      "days": "9",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968377",
+      "month": "2",
+      "days": "6",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968378",
+      "month": "3",
+      "days": "5",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968379",
+      "month": "4",
+      "days": "2;30",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968380",
+      "month": "5",
+      "days": "28",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968381",
+      "month": "6",
+      "days": "25",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968382",
+      "month": "7",
+      "days": "23",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968383",
+      "month": "8",
+      "days": "20",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968384",
+      "month": "9",
+      "days": "17",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968385",
+      "month": "10",
+      "days": "15",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968386",
+      "month": "11",
+      "days": "12",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968387",
+      "month": "12",
+      "days": "10",
+      "year": "2024",
+      "scheduleDescriptionId": "54662"
+    },
+    {
+      "id": "11968476",
+      "month": "2",
+      "days": "6",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968477",
+      "month": "4",
+      "days": "2;30",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968478",
+      "month": "5",
+      "days": "28",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968479",
+      "month": "6",
+      "days": "25",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968480",
+      "month": "7",
+      "days": "23",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968481",
+      "month": "8",
+      "days": "20",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968482",
+      "month": "9",
+      "days": "17",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968483",
+      "month": "10",
+      "days": "15",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968484",
+      "month": "12",
+      "days": "10",
+      "year": "2024",
+      "scheduleDescriptionId": "54663"
+    },
+    {
+      "id": "11968567",
+      "month": "1",
+      "days": "23",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968568",
+      "month": "2",
+      "days": "20",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968569",
+      "month": "3",
+      "days": "19",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968570",
+      "month": "4",
+      "days": "2;16;30",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968571",
+      "month": "5",
+      "days": "14;28",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968572",
+      "month": "6",
+      "days": "11;25",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968573",
+      "month": "7",
+      "days": "9;23",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968574",
+      "month": "8",
+      "days": "6;20",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968575",
+      "month": "9",
+      "days": "3;17",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968576",
+      "month": "10",
+      "days": "1;15;29",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968577",
+      "month": "11",
+      "days": "12;26",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968578",
+      "month": "12",
+      "days": "24",
+      "year": "2024",
+      "scheduleDescriptionId": "54660"
+    },
+    {
+      "id": "11968627",
+      "month": "1",
+      "days": "10;25",
+      "year": "2024",
+      "scheduleDescriptionId": "54657"
+    },
+    {
+      "id": "11968637",
+      "month": "4",
+      "days": "19",
+      "year": "2024",
+      "scheduleDescriptionId": "54655"
+    },
+    {
+      "id": "11968638",
+      "month": "10",
+      "days": "11",
+      "year": "2024",
+      "scheduleDescriptionId": "54655"
     }
+  ]
 }

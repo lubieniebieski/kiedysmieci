@@ -1,13 +1,13 @@
 ---
 pl:
   trash_types:
-    paper: papier
-    plastic: plastiki
-    glass: szkło
-    bio: bio
-    mixed: zmieszane
-    bulky: gabaryty
-    xmass_trees: choinki
+    54662: papier
+    54661: plastiki
+    54663: szkło
+    54660: bio
+    54653: zmieszane
+    54655: gabaryty
+    54657: choinki
   days:
     one: jutro
     few: "za %{count} dni"

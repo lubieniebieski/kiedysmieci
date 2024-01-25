@@ -10,5 +10,6 @@ gem "sinatra"
 gem "sinatra-reloader"
 gem "standard", group: :development
 gem "thin"
+gem "rspec", group: :test
 
 ruby "3.2.2"

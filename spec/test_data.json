@@ -1,0 +1,39 @@
+{
+    "schedules": [
+        {
+            "id": "100",
+            "month": "1",
+            "days": "31",
+            "year": "2024",
+            "scheduleDescriptionId": "200"
+        },
+        {
+            "id": "101",
+            "month": "2",
+            "days": "29",
+            "year": "2024",
+            "scheduleDescriptionId": "200"
+        }
+    ],
+    "scheduleDescription": [
+        {
+            "id": "200",
+            "month": "10",
+            "days": "11",
+            "year": "2024",
+            "scheduleDescriptionId": "09098",
+            "name": "ODPADY NIESEGREGOWANE",
+            "description": "",
+            "typeId": "5",
+            "color": "#242424",
+            "order": "0",
+            "notificationType": "0",
+            "notificationText": "",
+            "notificationDaysBefore": "0",
+            "masterId": "",
+            "slaveId": "",
+            "customTextWhenNoDates": "",
+            "doNotShowDates": "0"
+        }
+    ]
+}

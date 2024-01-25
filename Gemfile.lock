@@ -7,6 +7,7 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     daemons (1.4.1)
+    diff-lcs (1.5.0)
     domain_name (0.6.20231109)
     dotenv (2.8.1)
     erb-formatter (0.7.1)
@@ -53,6 +54,19 @@ GEM
     rake (13.1.0)
     regexp_parser (2.9.0)
     rexml (3.2.6)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
     rubocop (1.59.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -115,6 +129,7 @@ DEPENDENCIES
   i18n
   json
   pry
+  rspec
   sinatra
   sinatra-reloader
   standard
