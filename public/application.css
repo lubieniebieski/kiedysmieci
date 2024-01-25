@@ -1,19 +1,13 @@
 :root {
     --primary-color: #0092ca;
     --text-color: #333;
-    --ratio-font-size: 1.4vw;
+    --ratio-font-size: 2vw;
     --primary-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
     :root {
-        --ratio-font-size: 2.1vw;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    :root {
-        --ratio-font-size: 2.7vw;
+        --ratio-font-size: 3vw;
     }
 }
 
@@ -27,7 +21,7 @@ body {
 
 .hero {
     width: 70vw;
-    height: 100vh;
+    height: 95vh;
     margin-left: auto;
     margin-right: auto;
 
@@ -39,7 +33,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 4em;
+    font-size: 3em;
     margin-top: 0;
     margin-bottom: 0.5em;
 }
@@ -52,4 +46,18 @@ hr {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     border: 1px dashed #ddd;
+}
+
+.footer {
+    width: 80vw;
+    height: 5vh;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
 }
