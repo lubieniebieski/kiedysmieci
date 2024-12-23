@@ -12,4 +12,4 @@ gem "standard", group: :development
 gem "thin"
 gem "rspec", group: :test
 
-ruby "3.2.2"
+ruby "3.3.6"
