@@ -1,15 +1,16 @@
 source "https://rubygems.org"
 
 gem "dotenv"
-gem "i18n"
 gem "erb-formatter"
 gem "http"
+gem "i18n"
 gem "json"
 gem "pry"
-gem "sinatra"
-gem "sinatra-reloader"
-gem "standard", group: :development
-gem "thin"
+gem "puma"
+gem "rackup"
 gem "rspec", group: :test
+gem "sinatra-reloader"
+gem "sinatra"
+gem "standard", group: :development
 
 ruby "3.3.6"

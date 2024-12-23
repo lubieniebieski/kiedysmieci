@@ -7,13 +7,11 @@ GEM
     base64 (0.2.0)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
-    daemons (1.4.1)
     diff-lcs (1.5.1)
     domain_name (0.6.20240107)
     dotenv (3.1.7)
     erb-formatter (0.7.3)
       syntax_tree (~> 6.0)
-    eventmachine (1.2.7)
     ffi (1.17.0)
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
@@ -35,10 +33,12 @@ GEM
     llhttp-ffi (0.5.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
+    logger (1.6.4)
     method_source (1.0.0)
     multi_json (1.15.0)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.7.4)
     parallel (1.26.3)
     parser (3.3.6.0)
       ast (~> 2.4.1)
@@ -48,11 +48,18 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (6.0.1)
+    puma (6.5.0)
+      nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.10)
-    rack-protection (3.2.0)
+    rack (3.1.8)
+    rack-protection (4.1.1)
       base64 (>= 0.1.0)
-      rack (~> 2.2, >= 2.2.4)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.0.0)
+      rack (>= 3.0.0)
+    rackup (2.2.1)
+      rack (>= 3)
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.9.3)
@@ -86,16 +93,18 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    sinatra (3.2.0)
+    sinatra (4.1.1)
+      logger (>= 1.6.0)
       mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.2.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.1.1)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    sinatra-contrib (3.2.0)
+    sinatra-contrib (4.1.1)
       multi_json (>= 0.0.2)
       mustermann (~> 3.0)
-      rack-protection (= 3.2.0)
-      sinatra (= 3.2.0)
+      rack-protection (= 4.1.1)
+      sinatra (= 4.1.1)
       tilt (~> 2.0)
     sinatra-reloader (1.0)
       sinatra-contrib
@@ -113,10 +122,6 @@ GEM
       rubocop-performance (~> 1.23.0)
     syntax_tree (6.2.0)
       prettier_print (>= 1.2.0)
-    thin (1.8.2)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (>= 1, < 3)
     tilt (2.5.0)
     unicode-display_width (3.1.2)
       unicode-emoji (~> 4.0, >= 4.0.4)
@@ -132,11 +137,12 @@ DEPENDENCIES
   i18n
   json
   pry
+  puma
+  rackup
   rspec
   sinatra
   sinatra-reloader
   standard
-  thin
 
 RUBY VERSION
    ruby 3.3.6p108
