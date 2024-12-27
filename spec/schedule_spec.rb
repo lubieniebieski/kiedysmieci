@@ -3,8 +3,15 @@ require "pry"
 require_relative "../lib/schedule"
 
 describe Schedule do
+  let(:trash_types) do
+    JSON.parse([{
+      id: "123",
+      scheduleDescriptionId: "123",
+      name: "ODBIÓR CHOINEK",
+    }].to_json)
+  end
   let(:data) { {"id" => "112233", "month" => "9", "days" => "17;18", "year" => "2024", "scheduleDescriptionId" => "123"} }
-  let(:subject) { described_class.new(data) }
+  let(:subject) { described_class.new(data, trash_types) }
 
   it "allows to get the month" do
     expect(subject.month).to eq(9)
@@ -27,11 +34,8 @@ describe Schedule do
   end
 
   describe "#trash_type" do
-    ["54653", "54661", "54662", "54663", "54660", "54655", "54657"].each do |id|
-      it "translates #{id} to something more friendly" do
-        expect(subject).to receive(:schedule_description_id).and_return(id)
-        expect(subject.trash_type).to_not match("Translation missing")
-      end
+    it "translates trash type to something more friendly" do
+      expect(subject.trash_type).to match("Odbiór choinek")
     end
   end
 end

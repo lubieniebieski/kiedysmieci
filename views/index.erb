@@ -15,12 +15,16 @@
     <% if !trash.next_trash_day(1).nil? %>
       <h3>
         Kolejnym dniem wywozu śmieci będzie:
-        <span>
-          <%= I18n.l(trash.next_trash_day(1), format: :longer) %>
-        </span>. Zbierane będą:
-        <span>
-          <%= trash.next_trash_day_types(1) %>
-        </span>.
+        <div>
+          <span>
+            <%= I18n.l(trash.next_trash_day(1), format: :longer) %>
+          </span>
+        </div>
+        <div>Zbierane będą:
+          <span>
+            <%= trash.next_trash_day_types(1) %>
+          </span>.
+        </div>
       </h3>
     <% end %>
 

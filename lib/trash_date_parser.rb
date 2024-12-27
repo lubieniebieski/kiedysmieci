@@ -1,4 +1,3 @@
-require "json"
 require "i18n"
 require_relative "schedule"
 
@@ -28,14 +27,23 @@ class TrashDateParser
   private
 
   def parse_data!(data)
-    data = JSON.parse(data)
-    @schedules_data = data["schedules"]
-    @last_updated_at = data["schedulePeriod"]["changeDate"]
+    @schedules_data = data.fetch("schedules")
+    @trash_types = data.fetch("scheduleDescription")
+    @last_updated_at = data.fetch("changeDate")
+  end
+
+  def trash_types
+    @trash_types ||= schedules.map(&:trash_type).uniq
   end
 
   def schedules
     @schedules ||= @schedules_data.map do |schedule_data|
-      Schedule.new(schedule_data)
-    end
+      schedule = Schedule.new(schedule_data, @trash_types)
+      if schedule.trash_type == "Terminy płatności"
+        nil
+      else
+        schedule
+      end
+    end.compact
   end
 end

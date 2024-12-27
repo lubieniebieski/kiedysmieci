@@ -1,5 +1,9 @@
-require "minitest/test_task"
 require "./main"
 Dir.glob("lib/tasks/*.rake").each { |r| load r }
+require "rspec/core"
+require "rspec/core/rake_task"
 
-Minitest::TestTask.create # named test, sensible defaults
+task default: :spec
+
+desc "Run all specs in spec directory (excluding plugin specs)"
+RSpec::Core::RakeTask.new(:spec)

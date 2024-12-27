@@ -4,7 +4,7 @@ require_relative "../lib/trash_date_parser"
 
 describe TrashDateParser do
   let(:data) { File.read("spec/test_data.json") }
-  subject { TrashDateParser.new(data) }
+  subject { TrashDateParser.new(JSON.parse(data)) }
 
   describe "#trash_days" do
     it "returns the dates" do
