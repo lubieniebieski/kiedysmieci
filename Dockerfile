@@ -1,5 +1,5 @@
 ARG RUBY_VERSION=3.3.6
-FROM ruby:$RUBY_VERSION-slim as base
+FROM ruby:$RUBY_VERSION-slim AS base
 
 # Rack app lives here
 WORKDIR /app
@@ -10,7 +10,7 @@ RUN gem update --system --no-document && \
 
 
 # Throw-away build stage to reduce size of final image
-FROM base as build
+FROM base AS build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
@@ -23,6 +23,10 @@ RUN bundle install
 
 # Final stage for app image
 FROM base
+
+# Create tmp directory with proper ownership first
+RUN mkdir -p /app/tmp && \
+    chmod 777 /app/tmp
 
 # Run and own the application files as a non-root user for security
 RUN useradd ruby --home /app --shell /bin/bash
