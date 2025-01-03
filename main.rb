@@ -17,7 +17,6 @@ class Server < Sinatra::Base
 
   configure :development do
     register Sinatra::Reloader
-    FileUtils.mkdir_p(File.dirname(CACHE_FILE))
   end
 
   def cache_valid?
@@ -38,6 +37,9 @@ class Server < Sinatra::Base
     end
 
     trash = TrashDateParser.new(data)
-    erb :index, layout: :layout, locals: {trash: trash}
+    erb :index, layout: :layout, locals: {
+      trash: trash,
+      cached_at: DateTime.parse(data["cached_at"])
+    }
   end
 end
