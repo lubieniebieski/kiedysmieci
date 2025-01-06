@@ -10,6 +10,10 @@
       <%= trash.next_trash_day %>
     </h2>
 
+    <a href="<%= webcal_url %>" class="calendar-button">
+      📅 Subskrybuj kalendarz
+    </a>
+
     <hr/>
 
     <% if !trash.next_trash_day(1).nil? %>

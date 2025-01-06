@@ -12,5 +12,6 @@ gem "rspec", group: :test
 gem "sinatra-reloader"
 gem "sinatra"
 gem "standard", group: :development
+gem "icalendar"
 
 ruby "3.3.6"
