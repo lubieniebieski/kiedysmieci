@@ -48,7 +48,7 @@ class Server < Sinatra::Base
     trash_days_data = TrashDateParser.new(get_cached_data)
     erb :index, layout: :layout, locals: {
       trash: trash_days_data,
-      cached_at: DateTime.parse(data["cached_at"])
+      cached_at: DateTime.parse(trash_days_data["cached_at"])
     }
   end
 
