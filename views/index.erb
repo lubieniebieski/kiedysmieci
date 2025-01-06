@@ -1,13 +1,13 @@
 <section class="hero">
   <div class="hero-inner">
     <h1>Następny wywóz śmieci będzie
-      <span><%= I18n.t(:days, count: trash.days_till_next_trash_day) %></span>
+      <span><%= I18n.t(:days, count: trash.next_trash_day.days_from_today) %></span>
     </h1>
     <h2>czyli
-      <span><%= I18n.l(trash.next_trash_day, format: :longer) %></span>.</h2>
+      <span><%= I18n.l(trash.next_trash_day.date, format: :longer) %></span>.</h2>
     <h2>
       ✅ Zbierane będą:
-      <%= trash.next_trash_day_types %>
+      <%= trash.next_trash_day %>
     </h2>
 
     <hr/>
@@ -17,12 +17,12 @@
         Kolejnym dniem wywozu śmieci będzie:
         <div>
           <span>
-            <%= I18n.l(trash.next_trash_day(1), format: :longer) %>
+            <%= I18n.l(trash.next_trash_day(1).date, format: :longer) %>
           </span>
         </div>
         <div>Zbierane będą:
           <span>
-            <%= trash.next_trash_day_types(1) %>
+            <%= trash.next_trash_day(1) %>
           </span>.
         </div>
       </h3>

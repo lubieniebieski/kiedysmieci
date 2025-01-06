@@ -1,5 +1,6 @@
 require "i18n"
 require_relative "schedule"
+require_relative "trash_day"
 
 class TrashDateParser
   attr_reader :data, :last_updated_at
@@ -9,19 +10,25 @@ class TrashDateParser
   end
 
   def trash_days
-    schedules.map { |s| s.dates }.flatten.uniq.sort
+    dates_with_types = {}
+
+    schedules.each do |schedule|
+      schedule.dates.each do |date|
+        dates_with_types[date] ||= []
+        dates_with_types[date] << schedule.trash_type
+      end
+    end
+
+    dates_with_types.map { |date, types| TrashDay.new(date, types) }
+      .sort_by(&:date)
   end
 
   def next_trash_day(position = 0)
-    trash_days.select { |d| d >= Date.today }[position]
+    trash_days.select { |td| td.date >= Date.today }[position]
   end
 
-  def next_trash_day_types(position = 0)
-    schedules.select { |s| s.dates.include?(next_trash_day(position)) }.map(&:trash_type).uniq.join(", ")
-  end
-
-  def days_till_next_trash_day
-    (next_trash_day - Date.today).to_i
+  def upcoming_collections
+    trash_days.select { |td| td.date >= Date.today }
   end
 
   private
