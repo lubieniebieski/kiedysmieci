@@ -45,16 +45,18 @@ class Server < Sinatra::Base
   end
 
   get "/" do
-    trash_days_data = TrashDateParser.new(get_cached_data)
+    data = get_cached_data
+    trash = TrashDateParser.new(data)
     erb :index, layout: :layout, locals: {
-      trash: trash_days_data,
-      cached_at: DateTime.parse(trash_days_data["cached_at"])
+      trash: trash,
+      cached_at: DateTime.parse(data["cached_at"])
     }
   end
 
   get "/calendar.ics" do
-    trash_days_data = TrashDateParser.new(get_cached_data)
-    calendar_generator = CalendarGenerator.new(trash_days_data)
+    data = get_cached_data
+    trash = TrashDateParser.new(data)
+    calendar_generator = CalendarGenerator.new(trash)
 
     content_type "text/calendar"
     calendar_generator.generate
