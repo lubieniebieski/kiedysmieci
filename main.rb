@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "dotenv/load"
+require "fileutils"
 require "http"
 require "json"
 require "pry"
@@ -14,7 +15,9 @@ I18n.load_path += Dir[File.expand_path("config/locales") + "/*.yml"]
 I18n.default_locale = :pl
 
 class Server < Sinatra::Base
-  CACHE_FILE = File.join(__dir__, "tmp", "schedules_cache.json")
+  cache_dir = ENV.fetch("CACHE_DIR", "tmp").strip.delete('"\'')
+  CACHE_DIR = File.absolute_path?(cache_dir) ? cache_dir : File.join(__dir__, cache_dir)
+  CACHE_FILE = File.join(CACHE_DIR, "schedules_cache.json")
 
   configure :development do
     register Sinatra::Reloader
@@ -31,6 +34,7 @@ class Server < Sinatra::Base
       else
         fresh_data = Downloader.download_all
         cache_data = fresh_data.merge("cached_at" => DateTime.now.to_s)
+        FileUtils.mkdir_p(CACHE_DIR)
         File.write(CACHE_FILE, JSON.generate(cache_data))
         cache_data
       end
