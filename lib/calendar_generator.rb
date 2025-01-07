@@ -10,6 +10,10 @@ class CalendarGenerator
     calendar.timezone do |t|
       t.tzid = "Europe/Warsaw"
     end
+    calendar.ip_name = "Wywóz śmieci Turew"
+    calendar.description = "Harmonogram wywozu śmieci w Turwi"
+    calendar.refresh_interval = "P1W"
+    calendar.url = "https://smieci.turew.pl"
 
     @trash_parser.upcoming_collections.each do |trash_day|
       calendar.add_event(create_event(trash_day))
