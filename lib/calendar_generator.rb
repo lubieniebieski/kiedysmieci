@@ -10,7 +10,9 @@ class CalendarGenerator
     calendar.timezone do |t|
       t.tzid = "Europe/Warsaw"
     end
-    calendar.ip_name = "Wywóz śmieci Turew"
+    calendar.x_wr_calname = "Wywóz śmieci Turew"
+    calendar.x_wr_timezone = "Europe/Warsaw"
+    calendar.x_wr_caldesc = "Harmonogram wywozu śmieci w Turwi"
     calendar.description = "Harmonogram wywozu śmieci w Turwi"
     calendar.refresh_interval = "P1W"
     calendar.url = "https://smieci.turew.pl"
