@@ -33,16 +33,4 @@ describe TrashDateParser do
       expect(subject.next_trash_day.types).to include("Zmieszane")
     end
   end
-
-  describe "#upcoming_collections" do
-    before do
-      allow(Date).to receive(:today).and_return(Date.parse("2024-01-15"))
-    end
-
-    it "returns all future TrashDay objects" do
-      upcoming = subject.upcoming_collections
-      expect(upcoming).to all(be_a(TrashDay))
-      expect(upcoming.map(&:date)).to all(be >= Date.today)
-    end
-  end
 end

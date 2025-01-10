@@ -17,7 +17,7 @@ class CalendarGenerator
     calendar.refresh_interval = "P1W"
     calendar.url = "https://smieci.turew.pl"
 
-    @trash_parser.upcoming_collections.each do |trash_day|
+    @trash_parser.trash_days.each do |trash_day|
       calendar.add_event(create_event(trash_day))
     end
 

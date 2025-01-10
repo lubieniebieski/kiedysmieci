@@ -27,10 +27,6 @@ class TrashDateParser
     trash_days.select { |td| td.date >= Date.today }[position]
   end
 
-  def upcoming_collections
-    trash_days.select { |td| td.date >= Date.today }
-  end
-
   private
 
   def parse_data!(data)
