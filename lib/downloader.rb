@@ -3,7 +3,7 @@ require "json"
 require "date"
 
 class Downloader
-  BASE_URL = "https://pluginssl.ecoharmonogram.pl/api/v1/plugin/v1"
+  BASE_URL = "https://api.ecoharmonogram.pl/v1/plugin/v1"
 
   def initialize
     @community_id = ENV.fetch("COMMUNITY_ID")
@@ -45,6 +45,8 @@ class Downloader
     }
 
     periods = fetch_schedule_periods
+    return result if periods.empty?
+
     periods.each do |period|
       streets = fetch_streets(period.fetch("id"))
       streets.each do |street|
@@ -66,6 +68,8 @@ class Downloader
   private
 
   def parse_json(response_body)
+    return {} if response_body.nil? || response_body.empty?
+
     clean_response = response_body.force_encoding("UTF-8").sub("\xEF\xBB\xBF", "")
     JSON.parse(clean_response)
   end

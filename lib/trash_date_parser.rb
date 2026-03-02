@@ -30,9 +30,9 @@ class TrashDateParser
   private
 
   def parse_data!(data)
-    @schedules_data = data.fetch("schedules")
-    @trash_types = data.fetch("scheduleDescription")
-    @last_updated_at = data.fetch("changeDate")
+    @schedules_data = data.fetch("schedules", [])
+    @trash_types = data.fetch("scheduleDescription", [])
+    @last_updated_at = data.fetch("changeDate", DateTime.now.to_s)
   end
 
   def trash_types

@@ -32,11 +32,28 @@ class Server < Sinatra::Base
       if cache_valid?
         JSON.parse(File.read(CACHE_FILE))
       else
-        fresh_data = Downloader.download_all
-        cache_data = fresh_data.merge("cached_at" => DateTime.now.to_s)
-        FileUtils.mkdir_p(CACHE_DIR)
-        File.write(CACHE_FILE, JSON.generate(cache_data))
-        cache_data
+        begin
+          fresh_data = Downloader.download_all
+          if fresh_data["schedules"].empty?
+            raise "Download returned empty schedules — not caching"
+          end
+          cache_data = fresh_data.merge("cached_at" => DateTime.now.to_s)
+          FileUtils.mkdir_p(CACHE_DIR)
+          File.write(CACHE_FILE, JSON.generate(cache_data))
+          cache_data
+        rescue => e
+          puts "Error downloading fresh data: #{e.message}"
+          if File.exist?(CACHE_FILE)
+            JSON.parse(File.read(CACHE_FILE))
+          else
+            {
+              "schedules" => [],
+              "scheduleDescription" => [],
+              "changeDate" => DateTime.now.to_s,
+              "cached_at" => DateTime.now.to_s
+            }
+          end
+        end
       end
     end
   end
