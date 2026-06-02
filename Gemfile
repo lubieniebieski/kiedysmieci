@@ -14,4 +14,4 @@ gem "sinatra"
 gem "standard", group: :development
 gem "icalendar"
 
-ruby "3.3.6"
+ruby "3.4.9"
