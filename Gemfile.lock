@@ -146,7 +146,7 @@ DEPENDENCIES
   standard
 
 RUBY VERSION
-   ruby 3.4.9p82
+   ruby 4.0.9p0
 
 BUNDLED WITH
-   2.6.1
+   4.0.24

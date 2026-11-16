@@ -1,0 +1,18 @@
+[tools]
+ruby = "4.0.9"
+
+[tasks.setup]
+description = "Install application dependencies"
+run = "bundle install"
+
+[tasks.server]
+description = "Run the development server on port 4567"
+run = "bundle exec rackup --host 0.0.0.0 -p 4567"
+
+[tasks.test]
+description = "Run the RSpec suite"
+run = "bundle exec rspec"
+
+[tasks.lint]
+description = "Check Ruby formatting and style"
+run = "bundle exec standardrb"

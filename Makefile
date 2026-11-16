@@ -6,7 +6,7 @@ ifneq (,$(wildcard ./.env))
 endif
 
 server:
-	bundle exec rackup --host 0.0.0.0 -p 4567
+	mise run server
 
 deploy:
 	flyctl deploy

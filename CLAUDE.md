@@ -8,25 +8,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
+Use mise by default. Ruby is pinned to 4.0.9 in `mise.toml`; keep `.ruby-version`,
+`Gemfile`, and the Dockerfile in sync when upgrading it.
+
 ```bash
-# Install dependencies
-bundle install
+# Trust the project configuration and install Ruby and dependencies
+mise trust
+mise install
+mise run setup
 
 # Run development server (port 4567, auto-reloads)
+mise run server
+# or via the Makefile wrapper:
 make server
-# or directly:
-bundle exec rackup --host 0.0.0.0 -p 4567
 
 # Run tests
-bundle exec rspec
-# or via Rake
-bundle exec rake spec
+mise run test
 
 # Run a single spec file
-bundle exec rspec spec/trash_date_parser_spec.rb
+mise exec -- bundle exec rspec spec/trash_date_parser_spec.rb
 
 # Lint (StandardRB)
-bundle exec standardrb
+mise run lint
 
 # Deploy to Fly.io
 make deploy
